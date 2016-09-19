@@ -20,7 +20,7 @@ var messagesSeen   = 0;
 var messagesServed = 0;
 
 bot.on('ready', () => {
-  bot.user.setStatus('online', `in heaven`);
+  bot.user.setStatus('online', `in heaven | ${invoker}help`);
   console.log('Everything is ready!');
 });
 
