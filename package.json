@@ -1,0 +1,14 @@
+{
+  "name": "harambe-discord",
+  "version": "28.5.2016",
+  "description": "*gorilla sounds*",
+  "main": "harambe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AtlasTheBot",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^9.2.0"
+  }
+}
