@@ -20,7 +20,7 @@ var messagesSeen   = 0;
 var messagesServed = 0;
 
 bot.on('ready', () => {
-  bot.user.setStatus('online', `in heaven`);
+  bot.user.setStatus('online', `in heaven | 🔫 help`);
   console.log('Everything is ready!');
 });
 
@@ -70,6 +70,11 @@ bot.on('message', message => { //switch is for the weak
       stats(message);
     break;
 
+	case 'about':
+	  //woo one-liner
+	  message.channel.sendMessage("On May 28, 2016, a three-year-old boy climbed into a gorilla enclosure at the Cincinnati Zoo and Botanical Garden and was grabbed and dragged by Harambe, a 17-year-old Western lowland gorilla. Fearing for the boy's life, a zoo worker shot and killed Harambe. The incident was recorded on video and received broad international coverage and commentary, including controversy over the choice to kill Harambe. A number of primatologists and conservationists wrote later that the zoo had no other choice under the circumstances, and that it highlighted the danger of zoo animals in close proximity to humans and the need for better standards of care.");
+	break;
+
     default:
       messageServed = false;
       //do nothing
@@ -118,10 +123,11 @@ function joke(message) {
     if (jokes[cmd[1]] !== undefined) {
       chosen = cmd[1];
     } else {
-      message.channel.sendMessage('Harambe can\'t seem to find that joke...');
+	  message.channel.sendMessage('Harambe can\'t seem to find that joke...');
+	  return;
     }
   } else {
-    chosen =  Object.keys(jokes)[Math.floor(Math.random() *  Object.keys(jokes).length)];
+    chosen =  Object.keys(jokes)[Math.floor(Math.random() * Object.keys(jokes).length)];
   }
 
   message.channel.sendMessage(`Joke #${chosen}\n${jokes[chosen].join('\n')}`);
