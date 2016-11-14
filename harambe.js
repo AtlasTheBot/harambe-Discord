@@ -29,7 +29,7 @@ bot.on('message', message => { //switch is for the weak
   messagesSeen++;
   if (message.author.equals(bot.user) || message.author.bot) return; //Don't reply to itself or bots
 	
-  if (message.content = 'haha yes' && message.guild.id === '198997961005465609') {
+  if (message.content === 'haha yes' && message.guild.id === '198997961005465609') {
 	  message.channel.sendMessage('`haha yes`');
 	  return;
   }
