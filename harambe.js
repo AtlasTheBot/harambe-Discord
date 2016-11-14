@@ -29,7 +29,12 @@ bot.on('message', message => { //switch is for the weak
   messagesSeen++;
   if (message.author.equals(bot.user) || message.author.bot || !message.content.startsWith(invoker)) return; //Don't reply to itself or bots
   console.log(`${message.author.username}#${message.author.discriminator} <@${message.author.id}> fell into the enclosure!\n${message.content}`);
-
+	
+  if (message.content = 'haha yes' && message.guild.id === '198997961005465609') {
+	  message.channel.sendMessage('`haha yes`');
+	  return;
+  }
+	
   var cmd = message.content.replace(invoker, '').toLowerCase().split(' ');
   var messageServed = true;
 
