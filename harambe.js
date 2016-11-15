@@ -29,8 +29,8 @@ bot.on('message', message => { //switch is for the weak
   messagesSeen++;
   if (message.author.equals(bot.user) || message.author.bot) return; //Don't reply to itself or bots
 	
-  if (message.guild.id === '198997961005465609') {
-	  prefectCommands(message);
+  if (message.guild.id === '198997961005465609' || message.guild.id === '211956704798048256') {
+	  perfectCommands(message);
   }
 	
 	if (!message.content.startsWith(invoker)) return;
@@ -150,7 +150,7 @@ function evalMsg(message) {
       message.channel.sendMessage('```js\n' + e + '\n```');
     }
   } else {
-    message.channel.sendMessage('Harambe was shot before he coulld respond!');
+    message.channel.sendMessage('*Harambe was shot before he could respond!*');
   }
 }
 
@@ -186,9 +186,9 @@ function perfectCommands(message) {
 	switch (cmd[0]) {
 		case 'huggu':
 			if (message.author.id === '120698901236809728') {
-				message.channel.sendMessage(`*Huggu ${\U1F4E6}*`);
+				message.channel.sendMessage('*huggu 📦*');
 			} else {
-				message.channel.sendMessage(`*Huggu ${message.member.nickname !== null : message.member.nickname : message.author.username}*`)
+				message.channel.sendMessage(`*huggu ${(message.member.nickname !== null ? message.member.nickname : message.author.username)}*`)
 			}
 		break;
 	}
@@ -216,12 +216,6 @@ function msToTime(duration) {
   return timeString;
 }
 
-function unicodeToChar(text) {
-   return text.replace(/\\u[\dA-F]{4}/gi, 
-          function (match) {
-               return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));
-          });
-}
 //AUTH STUFF
 
 if (Auth.discord.token !== '') {
