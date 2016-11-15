@@ -29,9 +29,8 @@ bot.on('message', message => { //switch is for the weak
   messagesSeen++;
   if (message.author.equals(bot.user) || message.author.bot) return; //Don't reply to itself or bots
 	
-  if (message.content === 'haha yes' && message.guild.id === '198997961005465609') {
-	  message.channel.sendMessage('`haha yes`');
-	  return;
+  if (message.guild.id === '198997961005465609') {
+	  prefectCommands(message);
   }
 	
 	if (!message.content.startsWith(invoker)) return;
@@ -177,6 +176,24 @@ function stats(message) {
   );
 }
 
+//perfect
+
+function perfectCommands(message) {
+	if (message.content === 'haha yes') message.channel.sendMessage('`haha yes`');
+	
+	var cmd = message.content.replace(invoker, '').toLowerCase().split(' ');
+	
+	switch (cmd[0]) {
+		case 'huggu':
+			if (message.author.id === '120698901236809728') {
+				message.channel.sendMessage(`*Huggu ${\U1F4E6}*`);
+			} else {
+				message.channel.sendMessage(`*Huggu ${message.member.nickname !== null : message.member.nickname : message.author.username}*`)
+			}
+		break;
+	}
+}
+
 //Helper funcs
 
 function randomFile(folder) { //random file from the specified directory
@@ -199,6 +216,12 @@ function msToTime(duration) {
   return timeString;
 }
 
+function unicodeToChar(text) {
+   return text.replace(/\\u[\dA-F]{4}/gi, 
+          function (match) {
+               return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));
+          });
+}
 //AUTH STUFF
 
 if (Auth.discord.token !== '') {
