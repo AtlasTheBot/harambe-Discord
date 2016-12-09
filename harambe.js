@@ -181,6 +181,7 @@ function stats(message) {
 function perfectCommands(message) {
 	if (message.content === 'haha yes') message.channel.sendMessage('`haha yes`');
 	
+	if (!message.content.startsWith(invoker)) return;
 	var cmd = message.content.replace(invoker, '').toLowerCase().split(' ');
 	
 	switch (cmd[0]) {
