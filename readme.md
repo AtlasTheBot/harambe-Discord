@@ -1,3 +1,9 @@
+
+# It's dead go home
+The bot is down forever, code probably doesn't run anymore
+
+---
+
 # Harambe Bot
 ###### Why? Why not?
 ___
